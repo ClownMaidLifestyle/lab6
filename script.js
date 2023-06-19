@@ -10,3 +10,5 @@ const seattle = {
 };
 
 console.log(seattle);
+
+let salesContainer=document.getElementById("salesContainer");
