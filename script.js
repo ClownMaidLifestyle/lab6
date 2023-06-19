@@ -1,6 +1,7 @@
 "use strict";
 
 const seattle = {
+    storeName: "Seattle",
     minCust: 23,
     maxCust: 65,
     avgSales: 6.3,
@@ -11,7 +12,7 @@ const seattle = {
 
 console.log(seattle);
 
-function generateSeattle(){
+function generate(location){
     const salesContainer=document.getElementById("salesContainer");
     console.log("bestie...");
 
@@ -25,7 +26,7 @@ function generateSeattle(){
     const ul = document.createElement("ul");
     article.appendChild(ul);
 
-    for (let i = 0; i < seattle.cookiesEachHour.length; i++){
+    for (let i = 0; i < location.cookiesEachHour.length; i++){
         let li = document.createElement("li");
         let suffix = "am";
         let time = i + 6;
@@ -34,7 +35,7 @@ function generateSeattle(){
             suffix = "pm";
             time = time - 12;
         }
-        li.textContent = `${time}${suffix}: ${seattle.cookiesEachHour[i]}`
+        li.textContent = `${time}${suffix}: ${location.cookiesEachHour[i]}`
         ul.appendChild(li);
     }
 }
