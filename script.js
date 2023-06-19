@@ -20,7 +20,7 @@ function generate(location){
     salesContainer.appendChild(article);
 
     const h3 = document.createElement("h3");
-    h3.textContent = "seattle";
+    h3.textContent = location.storeName;
     article.appendChild(h3);
 
     const ul = document.createElement("ul");
