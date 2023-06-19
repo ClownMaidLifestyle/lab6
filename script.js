@@ -6,8 +6,8 @@ const seattle = {
     maxCust: 65,
     avgSales: 6.3,
     customersEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesEachHour: [16,20,35,48,56,77,93,144,119,84,61,23,42,57],
-    cookiesDaily: 875,
+    cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    cookiesDaily: 0,
 };
 
 console.log(seattle);
@@ -30,12 +30,14 @@ function generate(location){
         let li = document.createElement("li");
         let suffix = "am";
         let time = i + 6;
+        location.cookiesEachHour[i] = parseInt(Math.random() * (location.maxCust - location.minCust) + location.minCust);
+        location.cookiesEachHour[i] = parseInt(location.cookiesEachHour[i] * location.avgSales);
         console.log(li);
         if (time > 12){
             suffix = "pm";
             time = time - 12;
         }
-        li.textContent = `${time}${suffix}: ${location.cookiesEachHour[i]}`
+        li.textContent = `${time}${suffix}: ${location.cookiesEachHour[i]} cookies`
         ul.appendChild(li);
     }
 }
