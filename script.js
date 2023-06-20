@@ -29,18 +29,27 @@ Location.prototype.render = function(){
     storeHeader.textContent = `${this.storeName}`;
     locationRow.appendChild(storeHeader);
 
-
+    let totaldaily = 0;
     for (let i = 0; i < this.cookiesEachHour.length; i++){
         let td = document.createElement("td");
         this.cookiesEachHour[i] = parseInt(Math.random() * (this.maxCust - this.minCust) + this.minCust);
         this.cookiesEachHour[i] = parseInt(this.cookiesEachHour[i] * this.avgSales);
-        td.textContent = `${this.cookiesEachHour[i]} cookies`
+        totaldaily = totaldaily + this.cookiesEachHour[i];
+        td.textContent = `${this.cookiesEachHour[i]} cookies`;
         locationRow.appendChild(td);
     }
+    let total = document.createElement("td");
+    total.textContent = `${totaldaily} cookies`;
+    locationRow.appendChild(total);
 
 }
 
 const Seattle = new Location("Seattle", 23, 65, 6.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+const Tokyo = new Location("Tokyo", 2, 24, 1.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+const Dubai = new Location("Dubai", 11, 38, 3.7, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+const Paris = new Location("Paris", 20, 38, 2.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+const Lima = new Location("Lima", 2, 16, 4.6, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+
 
 /*const seattle = {
     storeName: "Seattle",
@@ -82,6 +91,7 @@ const Paris = {
     cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     cookiesDaily: 0,
 };
+
 
 const Lima = {
     storeName: "Lima",
