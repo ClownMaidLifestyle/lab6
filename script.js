@@ -1,6 +1,48 @@
 "use strict";
+const table = document.getElementById("salesTable");
+function Location(storeName, minCust, maxCust, avgSales, customersEachHour, cookiesEachHour, cookiesDaily){
+    this.storeName = storeName;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
+    this.avgSales = avgSales;
+    this.customersEachHour = customersEachHour;
+    this.cookiesEachHour = cookiesEachHour;
+    this.cookiesDaily = this.generatecookiesDaily();
+    this.render();
+}
 
-const seattle = {
+Location.prototype.generatecookiesDaily = function(){
+    for (let i = 0; i < this.cookiesEachHour.length; i++){
+        this.cookiesEachHour[i] = parseInt(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+        this.cookiesEachHour[i] = parseInt(this.cookiesEachHour[i] * this.avgSales);
+    }
+}
+
+Location.prototype.render = function(){
+    console.log(table);
+    const locationRow = document.createElement("tr");
+    console.log(locationRow);
+    table.appendChild(locationRow);
+    locationRow.setAttribute("id",`${this.storeName}`);
+
+    const storeHeader = document.createElement("th");
+    storeHeader.textContent = `${this.storeName}`;
+    locationRow.appendChild(storeHeader);
+
+
+    for (let i = 0; i < this.cookiesEachHour.length; i++){
+        let td = document.createElement("td");
+        this.cookiesEachHour[i] = parseInt(Math.random() * (this.maxCust - this.minCust) + this.minCust);
+        this.cookiesEachHour[i] = parseInt(this.cookiesEachHour[i] * this.avgSales);
+        td.textContent = `${this.cookiesEachHour[i]} cookies`
+        locationRow.appendChild(td);
+    }
+
+}
+
+const Seattle = new Location("Seattle", 23, 65, 6.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+
+/*const seattle = {
     storeName: "Seattle",
     minCust: 23,
     maxCust: 65,
@@ -49,13 +91,9 @@ const Lima = {
     customersEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     cookiesDaily: 0,
-};
+};*/
 
-
-
-console.log(seattle);
-
-function generate(location){
+/*function generate(location){
     const salesContainer=document.getElementById("salesContainer");
     console.log("bestie...");
 
@@ -83,4 +121,4 @@ function generate(location){
         li.textContent = `${time}${suffix}: ${location.cookiesEachHour[i]} cookies`
         ul.appendChild(li);
     }
-}
+}*/
