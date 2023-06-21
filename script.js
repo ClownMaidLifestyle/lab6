@@ -51,57 +51,6 @@ const Paris = new Location("Paris", 20, 38, 2.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
 const Lima = new Location("Lima", 2, 16, 4.6, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 
 
-/*const seattle = {
-    storeName: "Seattle",
-    minCust: 23,
-    maxCust: 65,
-    avgSales: 6.3,
-    customersEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesDaily: 0,
-};
-
-const Tokyo = {
-    storeName: "Tokyo",
-    minCust: 2,
-    maxCust: 24,
-    avgSales: 1.2,
-    customersEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesDaily: 0,
-};
-
-const Dubai = {
-    storeName: "Dubai",
-    minCust: 11,
-    maxCust: 38,
-    avgSales: 3.7,
-    customersEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesDaily: 0,
-};
-
-
-const Paris = {
-    storeName: "Paris",
-    minCust: 20,
-    maxCust: 38,
-    avgSales: 2.3,
-    customersEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesDaily: 0,
-};
-
-
-const Lima = {
-    storeName: "Lima",
-    minCust: 2,
-    maxCust: 16,
-    avgSales: 4.6,
-    customersEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesEachHour: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    cookiesDaily: 0,
-};*/
 
 /*function generate(location){
     const salesContainer=document.getElementById("salesContainer");
