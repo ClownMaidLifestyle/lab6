@@ -44,12 +44,19 @@ Location.prototype.render = function(){
 
 }
 
+const newLocationForm = document.getElementById("form");
+
+newLocationForm.addEventListener("submit", function (event){
+    event.preventDefault();
+    const locName = event.target.locName.value;
+    console.log(locName);
+});
+
 const Seattle = new Location("Seattle", 23, 65, 6.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 const Tokyo = new Location("Tokyo", 2, 24, 1.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 const Dubai = new Location("Dubai", 11, 38, 3.7, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 const Paris = new Location("Paris", 20, 38, 2.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 const Lima = new Location("Lima", 2, 16, 4.6, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
-
 
 
 /*function generate(location){

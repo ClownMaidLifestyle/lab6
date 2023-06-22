@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Vina';
+    src: local("VinaSans-Regular.ttf");
+
+}
+
+header{
+    display: flex;
+    background-color: green;
+}
+
+#logo{
+    width:30%;
+    justify-content: left;
+}
+
+#headerName{
+    margin-left: 5%;
+    font-family: 'VinaSans', serif;
+}
