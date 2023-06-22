@@ -49,7 +49,11 @@ const newLocationForm = document.getElementById("form");
 newLocationForm.addEventListener("submit", function (event){
     event.preventDefault();
     const locName = event.target.locName.value;
-    console.log(locName);
+    const maxCust = event.target.maxCust.value;
+    const minCust = event.target.minCust.value;
+    const avgSales = event.target.minCust.value;
+
+    const newKitten = new Location(locName, maxCust, minCust, avgSales, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 });
 
 const Seattle = new Location("Seattle", 23, 65, 6.3, [0,0,0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
